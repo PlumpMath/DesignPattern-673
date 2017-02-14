@@ -4,11 +4,15 @@ public class ConfigManger {
 	/*
 	 * 配置管理，负责读取配置文件，并把配置文件内容配置到Mode中
 	 */
-	private ConfigManger manger = null;
-	private ConfigMode cm = null;
+	private static ConfigManger manger = null;
+	private static ConfigMode cm = null;
 	
 	//单例
 	private ConfigManger(){
+	}
+	
+	public static ConfigManger getInstance() {
+		// TODO Auto-generated method stub
 		if(null==manger){
 			manger=new ConfigManger();
 			cm=new ConfigMode();
@@ -19,6 +23,7 @@ public class ConfigManger {
 			 * 的步骤
 			 */
 		}
+		return manger;
 	}
 
 	/*
